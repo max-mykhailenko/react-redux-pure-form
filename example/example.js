@@ -1,5 +1,4 @@
-// @flow
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { createStore, combineReducers } from 'redux';
 import { render } from 'react-dom';
 import { Provider, connect } from 'react-redux';
@@ -12,7 +11,7 @@ import {
 import type { Action } from '../src/types.js';
 
 class Example extends Component {
-  constructor(props: {user: Object, fieldAttrs: Object}) {
+  constructor(props) {
     super(props);
     this.handle = this.handle.bind(this);
     this.setDefaults = this.setDefaults.bind(this);
@@ -192,6 +191,7 @@ function mapStateToProps(state: Object): Object {
     profile: state.ReducerWithNesting.profile,
   };
 }
+
 
 const user = createFormReducer('user');
 
